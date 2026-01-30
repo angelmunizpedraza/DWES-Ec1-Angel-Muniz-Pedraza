@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1769770943481,
+    "nombre": "Angel",
+    "email": "angelhd028@gmail.com",
+    "edad": 20,
+    "ciudad": "sevilla",
+    "intereses": [
+      "meditacion"
+    ],
+    "fechaRegistro": "2026-01-30T11:02:23.481Z",
+    "password": "1234"
+  },
+  {
+    "id": 1769770959738,
+    "nombre": "Angel",
+    "email": "angelhd029@gmail.com",
+    "edad": 12,
+    "ciudad": "sevilla",
+    "intereses": [
+      "yoga"
+    ],
+    "fechaRegistro": "2026-01-30T11:02:39.738Z",
+    "password": "1234"
+  }
+]

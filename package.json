@@ -1,0 +1,16 @@
+{
+  "name": "suenos-valenti",
+  "version": "1.0.0",
+  "description": "Portal de Sesiones de Supra Conciencia",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "node app.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "express-session": "^1.17.3",
+    "cookie-parser": "^1.4.6",
+    "ejs": "^3.1.9"
+  }
+}

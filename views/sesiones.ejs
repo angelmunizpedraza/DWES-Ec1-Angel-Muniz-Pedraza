@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <%= titulo %> - Sueños Valenti
+    </title>
+    <link rel="stylesheet" href="/css/estilos.css">
+</head>
+
+<body class="<%= tema %>">
+    <header>
+        <h1>✨ Sueños Valenti ✨</h1>
+        <nav>
+            <a href="/">Inicio</a>
+            <a href="/sesiones">Sesiones</a>
+            <a href="/preferencias">Preferencias</a>
+            <% if (usuario) { %>
+                <a href="/perfil">Mi Perfil</a>
+                <a href="/carrito">Carrito (<%= carrito.length %>)</a>
+                <% } else { %>
+                    <a href="/login">Entrar</a>
+                    <a href="/registro">Registrarse</a>
+                    <% } %>
+        </nav>
+    </header>
+
+    <main>
+        <div class="contenedor">
+            <h2>Nuestras Sesiones Espirituales</h2>
+            <p class="mb-2">
+                Elige las sesiones que resuenen con tu alma y añádelas a tu carrito espiritual
+            </p>
+
+            <% if (!usuario) { %>
+                <div class="mensaje-info">
+                    <strong>Nota:</strong> Debes <a href="/login">iniciar sesión</a> para añadir
+                    sesiones a tu carrito espiritual.
+                </div>
+                <% } %>
+
+                    <div class="sesiones-grid">
+                        <% sesiones.forEach(function(sesion) { %>
+                            <div class="sesion-card">
+                                <h3>
+                                    <%= sesion.nombre %>
+                                </h3>
+                                <p class="sesion-duracion">⏱️ <%= sesion.duracion %>
+                                </p>
+                                <p style="margin: 0.5rem 0;">
+                                    <%= sesion.descripcion %>
+                                </p>
+                                <p class="sesion-precio">
+                                    <%= sesion.precio %>€
+                                </p>
+
+                                <% if (usuario) { %>
+                                    <form action="/carrito/agregar" method="POST" style="margin-top: 1rem;">
+                                        <input type="hidden" name="sesionId" value="<%= sesion.id %>">
+                                        <button type="submit" class="btn btn-primario" style="width: 100%;">
+                                            Añadir al carrito
+                                        </button>
+                                    </form>
+                                    <% } %>
+                            </div>
+                            <% }); %>
+                    </div>
+        </div>
+
+        <% if (usuario && carrito.length> 0) { %>
+            <div class="contenedor texto-centro">
+                <p>Tienes <strong>
+                        <%= carrito.length %>
+                    </strong> sesión(es) en tu carrito</p>
+                <a href="/carrito" class="btn btn-primario mt-1">Ver mi carrito</a>
+            </div>
+            <% } %>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Sueños Valenti - Conecta con tu supra conciencia</p>
+    </footer>
+</body>
+
+</html>

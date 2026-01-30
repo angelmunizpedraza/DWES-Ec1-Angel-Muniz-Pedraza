@@ -1,0 +1,33 @@
+[30/1/2026, 10:50:49] Usuario: anonimo - Accion: Servidor iniciado
+[30/1/2026, 11:57:45] Usuario: anonimo - Accion: Visita pagina inicio
+[30/1/2026, 11:57:45] Usuario: anonimo - Accion: Visita pagina inicio
+[30/1/2026, 11:57:49] Usuario: anonimo - Accion: Acceso sesiones
+[30/1/2026, 11:57:50] Usuario: anonimo - Accion: Acceso preferencias
+[30/1/2026, 11:57:57] Usuario: anonimo - Accion: Cambio tema a: oscuro
+[30/1/2026, 11:57:57] Usuario: anonimo - Accion: Acceso preferencias
+[30/1/2026, 11:58:00] Usuario: anonimo - Accion: Cambio tema a: claro
+[30/1/2026, 11:58:00] Usuario: anonimo - Accion: Acceso preferencias
+[30/1/2026, 11:58:01] Usuario: anonimo - Accion: Cambio tema a: oscuro
+[30/1/2026, 11:58:01] Usuario: anonimo - Accion: Acceso preferencias
+[30/1/2026, 11:58:02] Usuario: anonimo - Accion: Visita pagina inicio
+[30/1/2026, 11:58:05] Usuario: anonimo - Accion: Acceso sesiones
+[30/1/2026, 11:58:07] Usuario: anonimo - Accion: Visita pagina inicio
+[30/1/2026, 11:58:16] Usuario: anonimo - Accion: Acceso sesiones
+[30/1/2026, 11:58:22] Usuario: anonimo - Accion: Acceso pagina login
+[30/1/2026, 11:58:24] Usuario: anonimo - Accion: Acceso formulario registro
+[30/1/2026, 11:58:27] Usuario: anonimo - Accion: Acceso preferencias
+[30/1/2026, 11:58:29] Usuario: anonimo - Accion: Cambio tema a: claro
+[30/1/2026, 11:58:29] Usuario: anonimo - Accion: Acceso preferencias
+[30/1/2026, 11:58:30] Usuario: anonimo - Accion: Visita pagina inicio
+[30/1/2026, 11:58:33] Usuario: anonimo - Accion: Acceso preferencias
+[30/1/2026, 11:58:34] Usuario: anonimo - Accion: Cambio tema a: oscuro
+[30/1/2026, 11:58:34] Usuario: anonimo - Accion: Acceso preferencias
+[30/1/2026, 11:58:36] Usuario: anonimo - Accion: Visita pagina inicio
+[30/1/2026, 12:00:09] Usuario: anonimo - Accion: Acceso formulario registro
+[30/1/2026, 12:02:23] Usuario: anonimo - Accion: Nuevo usuario registrado: angelhd028@gmail.com
+[30/1/2026, 12:02:23] Usuario: anonimo - Accion: Acceso pagina login
+[30/1/2026, 12:02:29] Usuario: anonimo - Accion: Acceso formulario registro
+[30/1/2026, 12:02:39] Usuario: anonimo - Accion: Nuevo usuario registrado: angelhd029@gmail.com
+[30/1/2026, 12:02:39] Usuario: anonimo - Accion: Acceso pagina login
+[30/1/2026, 12:02:46] Usuario: Angel - Accion: Login exitoso
+[30/1/2026, 12:02:46] Usuario: Angel - Accion: Acceso perfil

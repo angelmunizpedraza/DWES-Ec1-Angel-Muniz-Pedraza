@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= titulo %> - Sueños Valenti</title>
+    <link rel="stylesheet" href="/css/estilos.css">
+</head>
+<body class="<%= tema %>">
+    <header>
+        <h1>✨ Sueños Valenti ✨</h1>
+        <nav>
+            <a href="/">Inicio</a>
+            <a href="/sesiones">Sesiones</a>
+            <a href="/preferencias">Preferencias</a>
+            <% if (usuario) { %>
+                <a href="/perfil">Mi Perfil</a>
+                <a href="/carrito">Carrito</a>
+            <% } else { %>
+                <a href="/login">Entrar</a>
+                <a href="/registro">Registrarse</a>
+            <% } %>
+        </nav>
+    </header>
+    
+    <main>
+        <%- body %>
+    </main>
+    
+    <footer>
+        <p>&copy; 2024 Sueños Valenti - Conecta con tu supra conciencia</p>
+    </footer>
+</body>
+</html>

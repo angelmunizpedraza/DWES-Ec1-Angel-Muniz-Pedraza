@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <%= titulo %> - Sueños Valenti
+    </title>
+    <link rel="stylesheet" href="/css/estilos.css">
+</head>
+
+<body class="<%= tema %>">
+    <header>
+        <h1>✨ Sueños Valenti ✨</h1>
+        <nav>
+            <a href="/">Inicio</a>
+            <a href="/sesiones">Sesiones</a>
+            <a href="/preferencias">Preferencias</a>
+            <% if (usuario) { %>
+                <a href="/perfil">Mi Perfil</a>
+                <a href="/carrito">Carrito</a>
+                <% } else { %>
+                    <a href="/login">Entrar</a>
+                    <a href="/registro">Registrarse</a>
+                    <% } %>
+        </nav>
+    </header>
+
+    <main>
+        <div class="contenedor hero">
+            <h2>Bienvenido a Sueños Valenti</h2>
+            <p>
+                Descubre el poder de las sesiones grupales para conectar con tu supra conciencia.
+                Un espacio de paz, armonía y crecimiento espiritual donde podrás explorar
+                los misterios de tu interior.
+            </p>
+
+            <div class="hero-links">
+                <a href="/sesiones" class="btn btn-primario">Ver Sesiones</a>
+                <% if (!usuario) { %>
+                    <a href="/registro" class="btn btn-secundario">Únete a nosotros</a>
+                    <% } else { %>
+                        <a href="/perfil" class="btn btn-secundario">Ir a mi perfil</a>
+                        <% } %>
+            </div>
+        </div>
+
+        <div class="contenedor">
+            <h2>¿Qué ofrecemos?</h2>
+            <p class="mb-2">
+                En Sueños Valenti organizamos sesiones grupales diseñadas para ayudarte
+                a conectar con tu yo superior y alcanzar estados de conciencia expandida.
+            </p>
+
+            <ul style="margin-left: 1.5rem; margin-bottom: 1rem;">
+                <li>Meditaciones guiadas en grupo</li>
+                <li>Viajes astrales acompañados</li>
+                <li>Sanación con cristales y energías</li>
+                <li>Regresiones a vidas pasadas</li>
+                <li>Conexión con guías espirituales</li>
+            </ul>
+
+            <p>
+                Cada sesión está dirigida por facilitadores con años de experiencia
+                en el mundo espiritual y el despertar de la conciencia.
+            </p>
+        </div>
+
+        <div class="contenedor texto-centro">
+            <h2>Comienza tu viaje</h2>
+            <p class="mb-2">
+                El primer paso hacia tu despertar está a un clic de distancia.
+            </p>
+            <a href="/sesiones" class="btn btn-primario">Explorar Sesiones</a>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Sueños Valenti - Conecta con tu supra conciencia</p>
+    </footer>
+</body>
+
+</html>

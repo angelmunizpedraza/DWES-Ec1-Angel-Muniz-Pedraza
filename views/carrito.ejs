@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <%= titulo %> - Sueños Valenti
+    </title>
+    <link rel="stylesheet" href="/css/estilos.css">
+</head>
+
+<body class="<%= tema %>">
+    <header>
+        <h1>✨ Sueños Valenti ✨</h1>
+        <nav>
+            <a href="/">Inicio</a>
+            <a href="/sesiones">Sesiones</a>
+            <a href="/preferencias">Preferencias</a>
+            <% if (usuario) { %>
+                <a href="/perfil">Mi Perfil</a>
+                <a href="/carrito">Carrito (<%= carrito.length %>)</a>
+                <% } else { %>
+                    <a href="/login">Entrar</a>
+                    <a href="/registro">Registrarse</a>
+                    <% } %>
+        </nav>
+    </header>
+
+    <main>
+        <div class="contenedor">
+            <h2>Mi Carrito Espiritual</h2>
+
+            <% if (carrito.length===0) { %>
+                <div class="carrito-vacio">
+                    <p style="font-size: 3rem; margin-bottom: 1rem;">🛒</p>
+                    <p>Tu carrito espiritual está vacío</p>
+                    <a href="/sesiones" class="btn btn-primario mt-2">Explorar Sesiones</a>
+                </div>
+                <% } else { %>
+                    <div class="mb-2">
+                        <% carrito.forEach(function(item, index) { %>
+                            <div class="carrito-item">
+                                <div>
+                                    <strong>
+                                        <%= item.nombre %>
+                                    </strong>
+                                    <p style="color: #888; font-size: 0.9rem;">
+                                        <%= item.duracion %> - <%= item.descripcion %>
+                                    </p>
+                                </div>
+                                <div style="display: flex; align-items: center; gap: 1rem;">
+                                    <span style="font-weight: bold; color: #4a9e7b;">
+                                        <%= item.precio %>€
+                                    </span>
+                                    <form action="/carrito/eliminar" method="POST" style="margin: 0;">
+                                        <input type="hidden" name="index" value="<%= index %>">
+                                        <button type="submit" class="btn btn-peligro" style="padding: 0.5rem;">
+                                            ❌
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                            <% }); %>
+                    </div>
+
+                    <div class="carrito-total">
+                        Total: <%= total %>€
+                    </div>
+
+                    <div class="flex-between mt-2">
+                        <form action="/carrito/vaciar" method="POST" style="margin: 0;">
+                            <button type="submit" class="btn btn-secundario">
+                                Vaciar carrito
+                            </button>
+                        </form>
+                        <a href="/sesiones" class="btn btn-primario">Seguir explorando</a>
+                    </div>
+                    <% } %>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Sueños Valenti - Conecta con tu supra conciencia</p>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <%= titulo %> - Sueños Valenti
+    </title>
+    <link rel="stylesheet" href="/css/estilos.css">
+</head>
+
+<body class="<%= tema %>">
+    <header>
+        <h1>✨ Sueños Valenti ✨</h1>
+        <nav>
+            <a href="/">Inicio</a>
+            <a href="/sesiones">Sesiones</a>
+            <a href="/preferencias">Preferencias</a>
+            <% if (usuario) { %>
+                <a href="/perfil">Mi Perfil</a>
+                <a href="/carrito">Carrito</a>
+                <% } else { %>
+                    <a href="/login">Entrar</a>
+                    <a href="/registro">Registrarse</a>
+                    <% } %>
+        </nav>
+    </header>
+
+    <main>
+        <div class="contenedor" style="max-width: 450px; margin: 0 auto;">
+            <h2>Iniciar Sesión</h2>
+            <p class="mb-2">Accede a tu espacio personal</p>
+
+            <% if (typeof registrado !=='undefined' || (typeof locals !=='undefined' && locals.registrado)) { %>
+                <div class="mensaje-exito">
+                    ¡Registro exitoso! Ya puedes iniciar sesión.
+                </div>
+                <% } %>
+
+                    <% if (error) { %>
+                        <div class="errores">
+                            <%= error %>
+                        </div>
+                        <% } %>
+
+                            <form action="/login" method="POST">
+                                <div class="form-grupo">
+                                    <label for="email">Correo electrónico</label>
+                                    <input type="email" id="email" name="email" placeholder="tu@email.com" required>
+                                </div>
+
+                                <div class="form-grupo">
+                                    <label for="password">Contraseña</label>
+                                    <input type="password" id="password" name="password" placeholder="Tu contraseña"
+                                        required>
+                                    <small style="color: #888; display: block; margin-top: 0.3rem;">
+                                        Pista: la contraseña por defecto es 1234
+                                    </small>
+                                </div>
+
+                                <div class="mt-2">
+                                    <button type="submit" class="btn btn-primario" style="width: 100%;">
+                                        Entrar
+                                    </button>
+                                </div>
+                            </form>
+
+                            <p class="mt-2 texto-centro">
+                                ¿No tienes cuenta? <a href="/registro">Regístrate gratis</a>
+                            </p>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Sueños Valenti - Conecta con tu supra conciencia</p>
+    </footer>
+</body>
+
+</html>

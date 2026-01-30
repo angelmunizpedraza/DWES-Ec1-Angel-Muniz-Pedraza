@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <%= titulo %> - Sueños Valenti
+    </title>
+    <link rel="stylesheet" href="/css/estilos.css">
+</head>
+
+<body class="<%= tema %>">
+    <header>
+        <h1>✨ Sueños Valenti ✨</h1>
+        <nav>
+            <a href="/">Inicio</a>
+            <a href="/sesiones">Sesiones</a>
+            <a href="/preferencias">Preferencias</a>
+            <% if (usuario) { %>
+                <a href="/perfil">Mi Perfil</a>
+                <a href="/carrito">Carrito</a>
+                <% } else { %>
+                    <a href="/login">Entrar</a>
+                    <a href="/registro">Registrarse</a>
+                    <% } %>
+        </nav>
+    </header>
+
+    <main>
+        <div class="contenedor" style="max-width: 600px; margin: 0 auto;">
+            <h2>Preferencias de visualización</h2>
+            <p class="mb-2">Elige el tema que más te guste para navegar por la web</p>
+
+            <form action="/preferencias" method="POST">
+                <div class="tema-opciones">
+                    <label class="tema-opcion claro-preview <%= temaActual === 'claro' ? 'activo' : '' %>">
+                        <input type="radio" name="tema" value="claro" <%=temaActual==='claro' ? 'checked' : '' %>>
+                        <div>
+                            <strong>☀️ Tema Claro</strong>
+                            <p style="font-size: 0.9rem; margin-top: 0.5rem;">
+                                Colores suaves y luminosos para una experiencia relajante
+                            </p>
+                        </div>
+                    </label>
+
+                    <label class="tema-opcion oscuro-preview <%= temaActual === 'oscuro' ? 'activo' : '' %>">
+                        <input type="radio" name="tema" value="oscuro" <%=temaActual==='oscuro' ? 'checked' : '' %>>
+                        <div>
+                            <strong>🌙 Tema Oscuro</strong>
+                            <p style="font-size: 0.9rem; margin-top: 0.5rem;">
+                                Tonos profundos y místicos para conectar mejor
+                            </p>
+                        </div>
+                    </label>
+                </div>
+
+                <div class="mt-2 texto-centro">
+                    <button type="submit" class="btn btn-primario">Guardar Preferencias</button>
+                </div>
+            </form>
+
+            <div class="mensaje-info mt-3">
+                <strong>Información:</strong> Tus preferencias se guardan en una cookie
+                del navegador y se mantendrán durante 30 días.
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Sueños Valenti - Conecta con tu supra conciencia</p>
+    </footer>
+</body>
+
+</html>
